@@ -1,0 +1,208 @@
+//flexbox toolkit
+@mixin flex-column {
+  display: flex;
+  flex-direction: column;
+}
+
+@mixin center-auto {
+  margin: {
+    left: auto;
+    right: auto;
+  }
+}
+
+@mixin box($width, $height: $width) {
+  width: $width;
+  height: $height;
+}
+
+@mixin flex-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@mixin flex-center-column {
+  @include flex-center();
+  flex-direction: column;
+}
+@mixin cover-background {
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+
+//this is when we use ::after and ::before
+@mixin pseudo(
+  $width: 100%,
+  $height: 100%,
+  $display: block,
+  $pos: absolute,
+  $content: ""
+) {
+  content: $content;
+  display: $display;
+  position: $pos;
+  @include box($width, $height);
+}
+
+@mixin position($position, $args) {
+  @each $pos in top right bottom left {
+    $i: index($args, $pos);
+    @if $i and $i + 1 <= length($args) and type-of (nth($args, $i + 1)) {
+      #{$pos}: nth($args, $i + 1);
+    }
+  }
+  position: $position;
+}
+
+@mixin absolute($args: " ") {
+  @include position(absolute, $args);
+}
+@mixin fixed($args: " ") {
+  @include position(fixed, $args);
+}
+@mixin relative($args: " ") {
+  @include position(relative, $args);
+}
+
+/*  .menu li {
+        @include absolute(top 100% left 0)
+    }
+    .sticky-bar {
+        @include fixed(top 0 left 0)
+    }
+    .submenu{
+        @include relative()
+    }
+*/
+
+$phone-wide: 480px;
+$phablet: 560px;
+$tablet-small: 640px;
+$tablet: 768px;
+$large: 1024px;
+$desktop: 1280px;
+$desktop-wide: 1440px;
+
+@mixin phone-wide {
+  @media only screen and (min-width: $phone-wide) {
+    @content;
+  }
+}
+@mixin tablet {
+  @media only screen and (min-width: $tablet) {
+    @content;
+  }
+}
+@mixin large {
+  @media only screen and (min-width: $large) {
+    @content;
+  }
+}
+@mixin desktop {
+  @media only screen and (min-width: $desktop) {
+    @content;
+  }
+}
+
+@mixin fade($type) {
+  @if $type == "hide" {
+    visibility: hidden;
+    opacity: 0;
+    transition: $transition;
+    // transition: visibility 1s opacity 1s;
+  } @else if $type == "show" {
+    visibility: visible;
+    opacity: 1;
+    transition: $transition;
+  }
+}
+
+// mixin for input-placeholder colors
+@mixin input-placeholder {
+  &.placeholder {
+    @content;
+  }
+  &:-moz-placeholder {
+    @content;
+  }
+  &::-moz-placeholder {
+    @content;
+  }
+  &:-ms-input-placeholder {
+    @content;
+  }
+  &::-webkit-input-placeholder {
+    @content;
+  }
+}
+
+@mixin font-face($font-name, $file-name, $weight: normal, $style: normal) {
+  @font-face {
+    font-family: quote($font-name);
+    src: url($file-name + ".eot");
+    src: url($file-name + ".eot") format(embedded-opentype)
+        url($file-name + ".woff") format("woff"),
+      url($filename + ".ttf") format("ttf"),
+      url($filename + ".svg") format("svg");
+    font-weight: $weight;
+    font-style: $style;
+  }
+}
+
+// @include font-face("MyFont", './base/typography/myfont.ttf', $style: underline)
+// div{
+//   font-family: "MyFont";
+// }
+
+@mixin text-shorten {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+//creating css triangles
+@mixin css-triangle(
+  $color,
+  $direction,
+  $size: 6px,
+  $position: absolute,
+  $round: false
+) {
+  @include pseudo($pos: $position);
+  width: 0;
+  height: 0;
+  @if $round {
+    border-radius: 3px;
+  }
+  @if $direction == down {
+    border-left: $size solid transparent;
+    border-right: $size solid transparent;
+    border-top: $size solid $color;
+    margin-top: 0 - round($size / 2.5);
+  } @else if $direction == up {
+    border-left: $size solid transparent;
+    border-right: $size solid transparent;
+    border-bottom: $size solid $color;
+    margin-bottom: 0 - round($size / 2.5);
+  } @else if $direction == right {
+    border-top: $size solid transparent;
+    border-bottom: $size solid transparent;
+    border-left: $size solid $color;
+    margin-right: -$size;
+  } @else if $direction == left {
+    border-top: $size solid transparent;
+    border-bottom: $size solid transparent;
+    border-right: $size solid $color;
+    margin-left: -$size;
+  }
+}
+
+@mixin animateDelay($delay: 100ms, $children) {
+  @for $i from 1 through $children {
+    &:nth-child(#{$i}) {
+      transition-delay: $delay * $i;
+    }
+  }
+}
