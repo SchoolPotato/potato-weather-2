@@ -275,5 +275,37 @@ h4 {
     line-height: 1;
   }
 }
+@font-face {
+  font-family: "Press Start 2P";
+  src: url("./fonts/PressStart2P-Regular.ttf");
+}
+.gifs {
+  max-width: 20rem;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.pressStart,
+p {
+  text-align: center;
+  font-family: "Press Start 2P";
+  margin-top: 1rem;
+}
+
+p {
+  font-size: 75%;
+}
+
+#graph {
+  max-width: 50rem;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+#header {
+  text-align: center;
+}
 
 /*# sourceMappingURL=main.css.map */

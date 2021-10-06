@@ -1,0 +1,24 @@
+@font-face {
+  font-family: "Press Start 2P";
+  src: url("./fonts/PressStart2P-Regular.ttf");
+}
+
+.gifs {
+  max-width: 20rem;
+  display: block;
+  margin: {
+    left: auto;
+    right: auto;
+  }
+}
+
+.pressStart,
+p {
+  text-align: center;
+  font-family: "Press Start 2P";
+  margin-top: 1rem;
+}
+
+p {
+  font-size: 75%;
+}
