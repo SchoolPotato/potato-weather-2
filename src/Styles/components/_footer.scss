@@ -1,0 +1,16 @@
+@use '../themes/defaultTheme' as *;
+
+.footer {
+  display: block;
+  position: relative;
+  background-color: $clr-primary-3;
+  p {
+    color: $clr-primary-9;
+  }
+  bottom: 0;
+  &::after {
+    content: "";
+    clear: both;
+    display: table;
+  }
+}

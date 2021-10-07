@@ -1,10 +1,41 @@
-#graph {
+@use '../themes/defaultTheme' as *;
+
+#graph,
+#graph2 {
   max-width: 50rem;
   display: block;
   margin: {
     left: auto;
     right: auto;
   }
+}
+
+#graph2 {
+  max-width: 45%;
+  transform: translate(0%, 25%);
+}
+
+h3 {
+  text-align: center;
+  padding-bottom: 0.4rem;
+  display: block;
+}
+hr {
+  background-color: $clr-primary-3;
+  color: $clr-primary-3;
+  border: 0.1rem solid $clr-primary-3;
+}
+
+$border: 0.2rem solid $clr-primary-8;
+#forecasts {
+  float: left;
+  border-left: $border;
+  border-right: $border;
+  border-bottom: $border;
+}
+
+.zebra {
+  background-color: $clr-primary-8;
 }
 
 #header {

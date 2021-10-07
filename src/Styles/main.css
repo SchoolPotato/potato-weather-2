@@ -275,6 +275,46 @@ h4 {
     line-height: 1;
   }
 }
+#graph,
+#graph2 {
+  max-width: 50rem;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+#graph2 {
+  max-width: 45%;
+  transform: translate(0%, 25%);
+}
+
+h3 {
+  text-align: center;
+  padding-bottom: 0.4rem;
+  display: block;
+}
+
+hr {
+  background-color: #2e73b8;
+  color: #2e73b8;
+  border: 0.1rem solid #2e73b8;
+}
+
+#forecasts {
+  float: left;
+  border-left: 0.2rem solid #b1cfec;
+  border-right: 0.2rem solid #b1cfec;
+  border-bottom: 0.2rem solid #b1cfec;
+}
+
+.zebra {
+  background-color: #b1cfec;
+}
+
+#header {
+  text-align: center;
+}
+
 @font-face {
   font-family: "Press Start 2P";
   src: url("./fonts/PressStart2P-Regular.ttf");
@@ -297,15 +337,19 @@ p {
   font-size: 75%;
 }
 
-#graph {
-  max-width: 50rem;
+.footer {
   display: block;
-  margin-left: auto;
-  margin-right: auto;
+  position: relative;
+  background-color: #2e73b8;
+  bottom: 0;
 }
-
-#header {
-  text-align: center;
+.footer p {
+  color: #cee0f3;
+}
+.footer::after {
+  content: "";
+  clear: both;
+  display: table;
 }
 
 /*# sourceMappingURL=main.css.map */
