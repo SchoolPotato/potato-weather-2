@@ -197,7 +197,7 @@ input[type=button] {
 
 body {
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
-  background: #cee0f3;
+  background-color: #cee0f3;
   color: #2e73b8;
 }
 
@@ -284,8 +284,9 @@ h4 {
 }
 
 #graph2 {
-  max-width: 45%;
-  transform: translate(0%, 25%);
+  max-width: 55%;
+  height: 55%;
+  transform: translate(0%, 15%);
 }
 
 h3 {
@@ -294,17 +295,19 @@ h3 {
   display: block;
 }
 
-hr {
-  background-color: #2e73b8;
-  color: #2e73b8;
-  border: 0.1rem solid #2e73b8;
-}
-
+/*hr {
+  background-color: $clr-primary-3;
+  color: $clr-primary-3;
+  border: 0.1rem solid $clr-primary-3;
+}*/
 #forecasts {
   float: left;
   border-left: 0.2rem solid #b1cfec;
   border-right: 0.2rem solid #b1cfec;
-  border-bottom: 0.2rem solid #b1cfec;
+  content: "";
+  clear: both;
+  display: table;
+  background-color: #cee0f3;
 }
 
 .zebra {
@@ -313,6 +316,30 @@ hr {
 
 #header {
   text-align: center;
+}
+
+.header2 {
+  background-color: #2e73b8;
+  color: #cee0f3;
+  padding: 0.2rem;
+  padding-bottom: 0.5rem;
+  margin-top: 1rem;
+  margin-bottom: 0rem;
+}
+
+#info {
+  max-width: 100%;
+  margin-right: auto;
+  margin-left: auto;
+  display: flex;
+  align-items: stretch;
+}
+
+.graphs {
+  background-image: url("../Images/clouds.png"), url("../Images/clouds-flipped.png");
+  background-position: bottom, top;
+  background-repeat: repeat-x, repeat-x;
+  background-size: 42rem;
 }
 
 @font-face {
@@ -339,17 +366,32 @@ p {
 
 .footer {
   display: block;
-  position: relative;
-  background-color: #2e73b8;
+  position: aboslute;
   bottom: 0;
-}
-.footer p {
+  padding: 0.5rem;
+  background-color: #2e73b8;
   color: #cee0f3;
+  text-align: center;
 }
-.footer::after {
-  content: "";
-  clear: both;
-  display: table;
+.footer #link {
+  color: #cee0f3;
+  margin-left: 1rem;
+  margin-right: 1rem;
+  font-size: 150%;
+}
+.footer #link:hover {
+  color: #153656;
+}
+
+.header {
+  text-align: center;
+  background-color: #2e73b8;
+  color: #cee0f3;
+  margin: 0rem;
+  padding: 0.2rem;
+}
+.header #icon {
+  align-items: center;
 }
 
 /*# sourceMappingURL=main.css.map */

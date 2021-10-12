@@ -1,0 +1,12 @@
+@use '../themes/defaultTheme' as *;
+
+.header {
+  text-align: center;
+  background-color: $clr-primary-3;
+  color: $clr-primary-9;
+  margin: 0rem;
+  padding: 0.2rem;
+  #icon {
+    align-items: center;
+  }
+}

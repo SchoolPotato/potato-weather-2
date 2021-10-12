@@ -11,8 +11,9 @@
 }
 
 #graph2 {
-  max-width: 45%;
-  transform: translate(0%, 25%);
+  max-width: 55%;
+  height: 55%;
+  transform: translate(0%, 15%);
 }
 
 h3 {
@@ -20,18 +21,21 @@ h3 {
   padding-bottom: 0.4rem;
   display: block;
 }
-hr {
+/*hr {
   background-color: $clr-primary-3;
   color: $clr-primary-3;
   border: 0.1rem solid $clr-primary-3;
-}
+}*/
 
 $border: 0.2rem solid $clr-primary-8;
 #forecasts {
   float: left;
   border-left: $border;
   border-right: $border;
-  border-bottom: $border;
+  content: "";
+  clear: both;
+  display: table;
+  background-color: $clr-primary-9;
 }
 
 .zebra {
@@ -40,4 +44,30 @@ $border: 0.2rem solid $clr-primary-8;
 
 #header {
   text-align: center;
+}
+.header2 {
+  background-color: $clr-primary-3;
+  color: $clr-primary-9;
+  padding: 0.2rem;
+  padding-bottom: 0.5rem;
+  margin-top: 1rem;
+  margin-bottom: 0rem;
+}
+
+#info {
+  max-width: 100%;
+  margin: {
+    right: auto;
+    left: auto;
+  }
+  display: flex;
+  align-items: stretch;
+}
+
+.graphs {
+  background-image: url("../Images/clouds.png"),
+    url("../Images/clouds-flipped.png");
+  background-position: bottom, top;
+  background-repeat: repeat-x, repeat-x;
+  background-size: 42rem;
 }

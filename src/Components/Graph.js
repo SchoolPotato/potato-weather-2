@@ -87,13 +87,13 @@ const Graph = () => {
         )
     } else {
         return (
-            <div>
-                <h1 id="header">This Week's Temperatures:</h1>
+            <div className="graphs">
+                <h1 id="header">This Week's Temperatures</h1>
                 {/*Days*/}
                 <img id="graph" src={`https://quickchart.io/chart?c={type:'line',data:{labels:[${currentLabels()}],datasets:[{label:'Nights',data:[${followingData()}]},{label: 'Days',data:[${currentData()}]}]}}`} alt=""></img>
 
-                <hr />
-                <h1 id="header">Weather:</h1>
+                {/*<hr />*/}
+                <h1 id="header" className="header2">Weather</h1>
                 <div id="info">
                     <div id="forecasts">
                         {weather.properties.periods.map((item)=>{
@@ -106,8 +106,6 @@ const Graph = () => {
                     </div>
                     <img id="graph2" src={`https://quickchart.io/chart?c={type:'pie',data:{labels:[${currentWeather()[0]}], datasets:[{data:[${currentWeather()[1]}], borderWidth:0}]}}`} alt=""></img>
                 </div>
-                <br />
-
 
                 {/*Nights
                 <img id="temperature" src={`https://quickchart.io/chart?c={type:'line',data:{labels:[${nightLabels()}],datasets:[{label:'Nights',data:[${nightData()}]}]}}`} alt=""></img>*/}
